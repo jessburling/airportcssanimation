@@ -1,0 +1,115 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    background-color: #409648;
+}
+
+.ground, .airport, .car-park, .runway-one, .runway-two {
+    position: relative;
+}
+
+.ground { 
+    width: 800px;
+    background: lightgray;
+    margin-left: 400px;
+}
+
+.car-park {
+    height: 100px;
+    width: 400px;
+    background-color: slategray;
+    margin-left: 830px;
+    margin-top: 0px;
+}
+
+.airport {
+    height: 75px;
+    width: 500px;
+    background: gray;
+    margin-left: 150px;
+}
+
+.runway-one {
+    margin-top: 50px;
+    height: 160px;
+    background-color: #383a38;
+}
+
+.markings{
+    box-sizing: border-box;
+    border: 2px dashed gray;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+}
+
+.link-markings{ 
+    box-sizing: border-box;
+    border: 2px dashed gray;
+    height: 0px;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: rotate(90deg);
+}
+
+.runway-link {
+    background-color:  #383a38;
+    position: absolute;
+    height: 350px;
+    width: 200px;
+    transform: rotate(-30deg);
+    margin-top: 100px;
+    margin-left: 400px;
+}
+
+.plane-1 {
+    position: absolute;
+    top: -70px;
+
+    animation: takeoff 5s ease-in 3s infinite normal both;
+}
+
+.runway-two {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    height: 160px;
+    background-color: #383a38;
+
+}
+
+.plane-2 {
+    position: absolute;
+    top: -70px;
+    left: 0px;
+
+    animation:  landing 12s ease-out 4s infinite normal both;
+}
+
+@keyframes takeoff {
+    from {transform: translateX(-500px) scale(0.5)}
+    to {transform: translateX(2000px) scale(1)};
+}
+
+@keyframes landing {
+    0% {transform: translateX(2000px) scale(1);
+        animation-timing-function: ease-out;}
+    25% {transform: translateX(700px) scale(0.5);
+        animation-timing-function: linear;}
+    26% {transform: translateX(680px) scale(0.55)}
+    27% {transform: translateX(640px) scale(0.5)}
+    50% {transform: translateX(270px) scale(0.5)}
+    75% {transform: translateX(270px) rotate(-120deg) scale(0.5)}
+    90% {transform: translateX(370px) translateY(185px) rotate(-120deg) scale(0.5)}
+    100% {transform: translateX(370px) translateY(185px) rotate(-120deg) scale(0.5)};
+}
+
+/* @keyframes bounce {
+    0% {transform: scale(0)}
+    50% {transform: scale(0.5)}
+    100% {transform: scale(1)}
+} */
+
